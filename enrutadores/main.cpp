@@ -1,19 +1,21 @@
-#include <QCoreApplication>
+#include "red.h"
 
-int main(int argc, char *argv[])
+int main()
 {
-    QCoreApplication a(argc, argv);
+    Red red;
 
-    // Set up code that uses the Qt event loop here.
-    // Call a.quit() or a.exit() to quit the application.
-    // A not very useful example would be including
-    // #include <QTimer>
-    // near the top of the file and calling
-    // QTimer::singleShot(5000, &a, &QCoreApplication::quit);
-    // which quits the application after 5 seconds.
+    // Agregar enrutadores
+    red.addRouter("A");
+    red.addRouter("B");
+    red.addRouter("C");
 
-    // If you do not need a running Qt event loop, remove the call
-    // to a.exec() or use the Non-Qt Plain C++ Application template.
+    // Agregar enlaces entre los enrutadores
+    red.addLink("A", "B", 4);
+    red.addLink("A", "C", 10);
+    red.addLink("B", "C", 3);
 
-    return a.exec();
+    // Imprimir la tabla de enrutamiento
+    red.printRed();
+
+    return 0;
 }

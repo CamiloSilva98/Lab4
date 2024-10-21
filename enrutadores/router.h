@@ -1,12 +1,26 @@
 #ifndef ROUTER_H
 #define ROUTER_H
 
-#include <QObject>
+#include <iostream>
+#include <map>
+#include <string>
+
+using namespace std;
 
 class Router
 {
 public:
-    Router();
+    string id;  // Identificador del enrutador
+    map<string, int> routingTable;  // Tabla de enrutamiento (destino, costo)
+
+    // Constructor
+    Router(string id);
+
+    // Métodos
+    void addLink(string routerId, int cost);
+    void removeLink(string routerId);
+    void printRoutingTable()const;
 };
 
 #endif // ROUTER_H
+
