@@ -1,7 +1,7 @@
 #include "Router.h"
 
 // Constructor
-Router::Router(string id) : id(id) {}
+Router::Router(const string& id) : id(id) {}
 
 // Agregar un enlace
 void Router::addLink(string routerId, int cost) {
@@ -15,8 +15,8 @@ void Router::removeLink(string routerId) {
 
 // Imprimir la tabla de enrutamiento
 void Router::printRoutingTable() const {
-    cout << "Routing table for Router " << id << ":\n";
+    cout << "El enrutamiendo para el router " << id << ":\n";
     for (const auto& entry : routingTable) {
-        cout << "To " << entry.first << " - Cost: " << entry.second << "\n";
+        cout << "Hacia " << entry.first << " - Cuesta: " << entry.second << "\n";
     }
 }

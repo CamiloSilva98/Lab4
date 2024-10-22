@@ -14,8 +14,8 @@ public:
     map<string, int> routingTable;  // Tabla de enrutamiento (destino, costo)
 
     // Constructor
-    Router(string id);
-
+    Router() = default;
+    Router(const string& id);
     // Métodos
     void addLink(string routerId, int cost);
     void removeLink(string routerId);
