@@ -1,7 +1,8 @@
 #include "Red.h"
 
 // Agregar un enrutador a la red
-void Red::addRouter(string id) {
+void Red::addRouter(string id)
+{
     routers[id] = Router(id);
 }
 // Eliminar un enrutador de la red
