@@ -4,6 +4,7 @@
 #include "Router.h"  // Incluir la clase Router
 #include <map>
 #include <string>
+#include <vector>
 
 class Red
 {
@@ -15,6 +16,9 @@ public:
     void removeRouter(string id);
     void addLink(string router1, string router2, int cost);
     void printRed();
+    void printConnections(const string& router);
+    void loadFromCSV(const string& filename);
+    pair<int, vector<string>> findShortestPath(const string& start, const string& end);
 };
 
 #endif // RED_H
